@@ -1,0 +1,719 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira página</title>
+</head>
+<body>
+    <h1 style=" text-align: center;">Bem-vindos a minha página</h1>
+    <h2 style=" text-align: center;">Saudações Rubro-Negras <b>SRN!</b></h2>
+    <div style="text-align: center;">
+        <img width="80px" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original">
+        <img width="80px" src="https://images.tcdn.com.br/files/311840/themes/5373/img/paginas-personalizadas/times/flamengo/idolos/zico.png?59ece5078b1c24e7f5fd2865bf4c5f40">
+        <img width="80px" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original">
+    </div>
+    <div>
+        <p style=" text-align: center;"><b>Clube de Regatas do Flamengo (CRF)</b> é uma agremiação poliesportiva brasileira com sede na cidade do Rio de Janeiro, capital do estado homônimo.</p>
+        <p style=" text-align: center;">Fundado no bairro do Flamengo para disputas do esporte remo em 17 de novembro de 1895, tornou-se um dos clubes mais bem-sucedidos e populares do esporte brasileiro especialmente pelo futebol.</p> 
+        <p style=" text-align: center;">É considerado o <b>maior</b> e <b>mais tradicional</b> clube do Brasil e da América do Sul.</p>
+    </div>
+    <div style="text-align: center;">
+        <a href="https://pt.wikipedia.org/wiki/Clube_de_Regatas_do_Flamengo">Wikipédia</a>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mengão — Uma paixão rubro-negra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --preto: #0c0c0d;
+    --carvao: #18181a;
+    --carvao-2: #212123;
+    --vermelho: #e8262f;
+    --vermelho-escuro: #a3161d;
+    --osso: #f2ede4;
+    --cinza: #9a9a9e;
+    --dourado: #cfa25a;
+    --linha: rgba(242,237,228,0.09);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--preto);
+    color: var(--osso);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+
+  a{ color: inherit; }
+
+  img{ max-width: 100%; display:block; }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  header.nav{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 50;
+    background: rgba(12,12,13,0.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--linha);
+  }
+  .nav-inner{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 68px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+  .nav-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .nav-brand img{ width: 28px; height:28px; }
+  .nav-links{
+    display:flex;
+    gap: 30px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color: var(--cinza);
+    font-size: 14.5px;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .nav-links a:hover, .nav-links a.active{
+    color: var(--osso);
+    border-color: var(--vermelho);
+  }
+  .nav-toggle{ display:none; }
+
+  .hero{
+    position: relative;
+    min-height: 100svh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 68px;
+  }
+  .hero-crest{
+    position:absolute;
+    right: -140px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 640px;
+    opacity: 0.07;
+    filter: grayscale(1) brightness(3);
+    pointer-events: none;
+  }
+  .hero-inner{
+    position:relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+    width:100%;
+  }
+  .hero-eyebrow{
+    color: var(--vermelho);
+    font-family:'Oswald', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    margin-bottom: 18px;
+  }
+  .hero h1{
+    font-size: clamp(48px, 8.5vw, 108px);
+    line-height: 0.96;
+    color: var(--osso);
+  }
+  .hero h1 span{
+    display:block;
+    color: var(--vermelho);
+  }
+  .hero-sub{
+    max-width: 480px;
+    margin-top: 28px;
+    color: var(--cinza);
+    font-size: 17px;
+  }
+  .hero-meta{
+    display:flex;
+    gap: 48px;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .hero-meta div{ border-left: 2px solid var(--vermelho); padding-left: 14px; }
+  .hero-meta .num{
+    font-family:'Oswald', sans-serif;
+    font-size: 30px;
+    color: var(--osso);
+  }
+  .hero-meta .label{
+    color: var(--cinza);
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom: 36px;
+    left: 32px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color: var(--cinza);
+    font-size: 13px;
+  }
+  .scroll-cue .line{
+    width: 28px; height:1px; background: var(--cinza);
+    animation: pulseline 1.8s ease-in-out infinite;
+  }
+  @keyframes pulseline{
+    0%,100%{ transform: scaleX(1); opacity: .6;}
+    50%{ transform: scaleX(1.6); opacity: 1; }
+  }
+
+  section{ padding: 120px 0; border-bottom: 1px solid var(--linha); }
+  section:last-of-type{ border-bottom:none; }
+  .section-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+  .section-head h2{
+    font-size: clamp(30px, 4vw, 44px);
+    color: var(--osso);
+  }
+  .section-num{
+    font-family:'Oswald', sans-serif;
+    color: var(--vermelho);
+    font-size: 15px;
+  }
+
+  .sobre-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .sobre-grid p{
+    color: var(--osso);
+    font-size: 18px;
+    max-width: 62ch;
+    margin: 0 0 20px;
+  }
+  .sobre-grid p.muted{ color: var(--cinza); font-size: 16px; }
+  blockquote{
+    margin: 0;
+    border-left: 3px solid var(--vermelho);
+    padding-left: 22px;
+    font-family:'Oswald', sans-serif;
+    font-size: 24px;
+    color: var(--osso);
+    line-height: 1.3;
+  }
+  blockquote cite{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    color: var(--cinza);
+    margin-top: 14px;
+  }
+
+  .tabs{
+    display:flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--linha);
+    margin-bottom: 40px;
+  }
+  .tab-btn{
+    background:none;
+    border:none;
+    color: var(--cinza);
+    font-family:'Oswald', sans-serif;
+    font-size: 15px;
+    padding: 12px 18px;
+    cursor:pointer;
+    border-bottom: 2px solid transparent;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .tab-btn:hover{ color: var(--osso); }
+  .tab-btn.active{ color: var(--osso); border-color: var(--vermelho); }
+
+  .tab-panel{ display:none; }
+  .tab-panel.active{ display:grid; grid-template-columns: 0.5fr 1.5fr; gap: 48px; }
+  .tab-count{
+    font-family:'Oswald', sans-serif;
+    font-size: 90px;
+    color: var(--vermelho);
+    line-height: 0.9;
+  }
+  .tab-count-label{
+    color: var(--cinza);
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .tab-detail p{ color: var(--osso); font-size: 16px; max-width: 56ch; }
+  .tab-years{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .tab-years span{
+    border: 1px solid var(--linha);
+    color: var(--cinza);
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  .tab-note{
+    color: var(--cinza);
+    font-size: 13px;
+    margin-top: 18px;
+    font-style: italic;
+  }
+
+  .idolo{
+    display:grid;
+    grid-template-columns: 340px 1fr;
+    gap: 56px;
+    align-items:center;
+    background: var(--carvao);
+    border: 1px solid var(--linha);
+    border-radius: 6px;
+    padding: 48px;
+  }
+  .idolo-img{
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--carvao-2);
+  }
+  .idolo-img img{
+    width:100%;
+    filter: grayscale(0.35);
+    transition: filter .4s ease, transform .4s ease;
+  }
+  .idolo:hover .idolo-img img{
+    filter: grayscale(0);
+    transform: scale(1.03);
+  }
+  .idolo-number{
+    position:absolute;
+    top: 14px; left:14px;
+    font-family:'Oswald', sans-serif;
+    font-size: 40px;
+    color: var(--osso);
+    background: var(--vermelho-escuro);
+    padding: 2px 14px;
+    border-radius: 3px;
+  }
+  .idolo-body h3{
+    font-size: 32px;
+    color: var(--osso);
+  }
+  .idolo-body .apelido{
+    color: var(--vermelho);
+    font-size: 15px;
+    margin: 8px 0 20px;
+  }
+  .idolo-body p{
+    color: var(--cinza);
+    font-size: 16px;
+    max-width: 52ch;
+  }
+
+  .stats{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  .stat{
+    border-top: 2px solid var(--vermelho);
+    padding-top: 18px;
+  }
+  .stat .count{
+    font-family:'Oswald', sans-serif;
+    font-size: clamp(42px, 6vw, 64px);
+    color: var(--osso);
+  }
+  .stat .label{
+    color: var(--cinza);
+    font-size: 14px;
+    margin-top: 6px;
+    max-width: 26ch;
+  }
+
+  .frase{
+    text-align:center;
+    padding: 140px 0;
+  }
+  .frase p{
+    font-family:'Oswald', sans-serif;
+    font-size: clamp(32px, 5.5vw, 58px);
+    color: var(--osso);
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.15;
+  }
+  .frase p span{ color: var(--vermelho); }
+  .frase .assinatura{
+    margin-top: 28px;
+    color: var(--cinza);
+    font-size: 14px;
+  }
+
+  footer{
+    padding: 48px 0;
+  }
+  footer .footer-inner{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .brand{
+    font-family:'Oswald', sans-serif;
+    font-size: 15px;
+    color: var(--osso);
+  }
+  footer a.link{
+    color: var(--cinza);
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid var(--linha);
+  }
+  footer a.link:hover{ color: var(--vermelho); border-color: var(--vermelho); }
+  footer .copy{ color: var(--cinza); font-size: 13px; }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--vermelho);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .scroll-cue .line{ animation: none; }
+    .idolo-img img{ transition:none; }
+  }
+
+  @media (max-width: 860px){
+    .sobre-grid{ grid-template-columns: 1fr; gap: 36px; }
+    .idolo{ grid-template-columns: 1fr; padding: 28px; }
+    .idolo-img{ max-width: 220px; }
+    .stats{ grid-template-columns: 1fr; gap: 28px; }
+    .tab-panel.active{ grid-template-columns: 1fr; gap: 20px; }
+    .nav-links{
+      position: fixed;
+      top: 68px; left:0; right:0;
+      background: var(--preto);
+      border-bottom: 1px solid var(--linha);
+      flex-direction: column;
+      padding: 18px 32px 26px;
+      gap: 16px;
+      display:none;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-toggle{
+      display:block;
+      background:none;
+      border:1px solid var(--linha);
+      color: var(--osso);
+      font-size: 20px;
+      width: 40px; height:40px;
+      border-radius: 4px;
+      cursor:pointer;
+    }
+    .hero-crest{ width: 380px; right: -160px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png" alt="">
+      Mengão
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#titulos">Títulos</a></li>
+      <li><a href="#idolo">Ídolo</a></li>
+      <li><a href="#torcida">Torcida</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-crest" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Flamengo-RJ_%28BRA%29.png" alt="">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Clube de Regatas do Flamengo</div>
+    <h1>Uma paixão que<span>atravessa gerações.</span></h1>
+    <p class="hero-sub">Fundado às margens da Baía de Guanabara em 1895, o Flamengo deixou de ser só um clube de remo para se tornar a maior torcida do Brasil. Essa página é sobre o que é carregar essa camisa no peito.</p>
+    <div class="hero-meta">
+      <div>
+        <div class="num">1895</div>
+        <div class="label">Ano de fundação</div>
+      </div>
+      <div>
+        <div class="num"><span data-count="40">0</span></div>
+        <div class="label">Títulos estaduais — recorde</div>
+      </div>
+      <div>
+        <div class="num"><span data-count="4">0</span></div>
+        <div class="label">Taças da Libertadores</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="line"></span> role para descer</div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Mais que um clube</h2>
+      <span class="section-num">01 — Sobre</span>
+    </div>
+    <div class="sobre-grid">
+      <div>
+        <p>O Clube de Regatas do Flamengo nasceu no bairro do Flamengo, no Rio de Janeiro, para disputas de remo. O futebol chegou depois, em 1911, quando um grupo de jogadores insatisfeitos com o Fluminense atravessou para o rubro-negro — e mudou a história do esporte brasileiro para sempre.</p>
+        <p class="muted">Mais de cem anos depois, o Flamengo é reconhecido como o clube com a maior torcida do país, com presença em todos os estados brasileiros e uma das bases de torcedores mais engajadas do mundo, dentro e fora de campo.</p>
+      </div>
+      <blockquote>
+        Uma vez Flamengo,<br>sempre Flamengo.
+        <cite>Ditado popular da torcida rubro-negra</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="titulos">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Uma vitrine de conquistas</h2>
+      <span class="section-num">02 — Títulos</span>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="carioca">Carioca</button>
+      <button class="tab-btn" data-tab="brasileirao">Brasileirão</button>
+      <button class="tab-btn" data-tab="copadobrasil">Copa do Brasil</button>
+      <button class="tab-btn" data-tab="libertadores">Libertadores</button>
+      <button class="tab-btn" data-tab="mundial">Mundial</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-carioca">
+      <div>
+        <div class="tab-count">40</div>
+        <div class="tab-count-label">títulos — maior campeão da história</div>
+      </div>
+      <div class="tab-detail">
+        <p>Nenhum clube ergueu mais taças do Campeonato Carioca do que o Flamengo. A conquista mais recente veio em março de 2026, reafirmando a hegemonia do clube no estado do Rio de Janeiro desde os anos 1910.</p>
+        <div class="tab-years"><span>1914</span><span>1920</span><span>1939</span><span>1953</span><span>1963</span><span>1978</span><span>1991</span><span>2004</span><span>2017</span><span>2020</span><span>2024</span><span>2026</span></div>
+        <div class="tab-note">Amostra de anos conquistados — histórico completo soma 40 edições.</div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-brasileirao">
+      <div>
+        <div class="tab-count">8</div>
+        <div class="tab-count-label">títulos nacionais</div>
+      </div>
+      <div class="tab-detail">
+        <p>O primeiro Brasileiro veio em 1980, no auge da geração de Zico. Depois de quase três décadas de jejum, o clube voltou a ser campeão em 2009 e iniciou um novo ciclo vitorioso a partir de 2019.</p>
+        <div class="tab-years"><span>1980</span><span>1982</span><span>1983</span><span>1992</span><span>2009</span><span>2019</span><span>2020</span><span>2025</span></div>
+        <div class="tab-note">O título de 1987 é reivindicado pela torcida, mas não é reconhecido oficialmente pela CBF.</div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-copadobrasil">
+      <div>
+        <div class="tab-count">5</div>
+        <div class="tab-count-label">títulos — maior campeão da competição</div>
+      </div>
+      <div class="tab-detail">
+        <p>Na Copa do Brasil, o Flamengo também é o clube mais vitorioso, com conquistas em diferentes gerações do time — da era pós-redemocratização até o ciclo mais recente sob comando técnico internacional.</p>
+        <div class="tab-years"><span>1990</span><span>2006</span><span>2013</span><span>2022</span><span>2024</span></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-libertadores">
+      <div>
+        <div class="tab-count">4</div>
+        <div class="tab-count-label">taças — recorde entre clubes brasileiros</div>
+      </div>
+      <div class="tab-detail">
+        <p>A primeira Libertadores, em 1981, tem a assinatura de Zico e de um time lendário. A segunda só viria 38 anos depois, em uma final histórica contra o River Plate. Em 2025, o tetracampeonato colocou o Flamengo isolado como maior campeão brasileiro da competição.</p>
+        <div class="tab-years"><span>1981</span><span>2019</span><span>2022</span><span>2025</span></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-mundial">
+      <div>
+        <div class="tab-count">1</div>
+        <div class="tab-count-label">Mundial de Clubes (FIFA)</div>
+      </div>
+      <div class="tab-detail">
+        <p>Em Tóquio, no dia 13 de dezembro de 1981, o Flamengo goleou o Liverpool por 3 a 0 na final da Copa Intercontinental — considerado por muitos torcedores o time mais completo da história do clube.</p>
+        <div class="tab-years"><span>1981</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="idolo">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>O ídolo eterno</h2>
+      <span class="section-num">03 — Ídolo</span>
+    </div>
+    <div class="idolo">
+      <div class="idolo-img">
+        <span class="idolo-number">10</span>
+        <img src="https://images.tcdn.com.br/files/311840/themes/5373/img/paginas-personalizadas/times/flamengo/idolos/zico.png?59ece5078b1c24e7f5fd2865bf4c5f40" alt="Zico">
+      </div>
+      <div class="idolo-body">
+        <h3>Zico</h3>
+        <div class="apelido">O Galinho de Quintino</div>
+        <p>Formado nas categorias de base do próprio clube, Zico se tornou o maior artilheiro da história do Flamengo e um dos maiores jogadores que o futebol brasileiro já produziu. Foi o motor da geração de 1981, campeã da Libertadores e do Mundial, e segue como referência de talento e identidade rubro-negra para todas as gerações seguintes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="torcida">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A força da torcida</h2>
+      <span class="section-num">04 — Torcida</span>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="count"><span data-count="130">0</span>+</div>
+        <div class="label">anos de história, desde a fundação em 1895</div>
+      </div>
+      <div class="stat">
+        <div class="count">Nº<span data-count="1">0</span></div>
+        <div class="label">maior torcida do Brasil, com presença em todos os estados</div>
+      </div>
+      <div class="stat">
+        <div class="count"><span data-count="58">0</span></div>
+        <div class="label">títulos de futebol profissional somando todas as competições</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="frase">
+  <p>Uma vez <span>Flamengo</span>,<br>sempre Flamengo.</p>
+  <div class="assinatura">SRN — Saudações Rubro-Negras ❤️🖤</div>
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="brand">Clube de Regatas do Flamengo</div>
+    <a class="link" href="https://pt.wikipedia.org/wiki/Clube_de_Regatas_do_Flamengo" target="_blank" rel="noopener">Ler mais na Wikipédia</a>
+    <div class="copy">Página de torcedor, feita com paixão rubro-negra.</div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const counters = document.querySelectorAll('[data-count]');
+  const countObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        if(reduceMotion){
+          el.textContent = target;
+        } else {
+          const duration = 900;
+          const startTime = performance.now();
+          function tick(now){
+            const progress = Math.min((now - startTime) / duration, 1);
+            el.textContent = Math.floor(progress * target);
+            if(progress < 1) requestAnimationFrame(tick);
+            else el.textContent = target;
+          }
+          requestAnimationFrame(tick);
+        }
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach(c => countObserver.observe(c));
+</script>
+
+</body>
+</html>
+

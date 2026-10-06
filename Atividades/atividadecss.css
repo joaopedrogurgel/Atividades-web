@@ -1,0 +1,88 @@
+body {
+    background-color: #eeeeee;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1a237e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-family: Georgia, serif;
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+}
+
+.produto {
+    background-color: white;
+    color: #333333;
+    width: 250px;
+    height: 460px;
+    margin: 15px;
+    padding: 15px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.produto h2 {
+    color: #303f9f;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.produto img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: auto;
+}
+
+.produto p {
+    color: #555555;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.preco {
+    text-align: center;
+    background-color: #dddddd;
+    padding: 10px;
+}
+
+.sale {
+    text-align: center;
+    background-color: #ff161686;
+    padding: 10px;
+}
+
+footer {
+    background-color: #1a237e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
